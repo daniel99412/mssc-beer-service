@@ -18,7 +18,7 @@ import guru.springframework.msscbeerservice.web.model.BeerDto;
 @RequestMapping("/api/v1/beer")
 public class BeerController {
     
-    @GetMapping({"/beerId"})
+    @GetMapping("/{beerId}")
     private ResponseEntity<BeerDto> getBeerById(@PathVariable UUID beerId) {
         // TODO Impl
         return new ResponseEntity<BeerDto>(BeerDto.builder().build(), HttpStatus.OK);
@@ -30,7 +30,7 @@ public class BeerController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
-    @PutMapping({"/beerId"})
+    @PutMapping("/{beerId}")
     public ResponseEntity updateBeerById(@PathVariable UUID beerId, @RequestBody BeerDto beerDto) {
         // TODO Impl
         return new ResponseEntity(HttpStatus.NO_CONTENT);
